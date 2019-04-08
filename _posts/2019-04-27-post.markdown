@@ -1,0 +1,31 @@
+---
+title:  Join a Chargepoint Waitlist, Automatically
+date:   2019-04-27 09:22:40 -0700
+---
+
+[Chargepoint](https://www.chargepoint.com/) has a nice feature that automatically puts you on a given waitlist at a given time of day, but this feature might have been _blocked_ by your company's admin. To get past the restriction, one has to be creative.
+
+There are two APIs needed from Chargepoint:
+
+1. User login
+2. Join a waitlist identified by a numeric ID at a given time of day
+
+With these I wrote a bash script that can put you on a waitlist from the command line, with the following provided:
+
+* User name for your Chargepoint account
+* Password
+* Waitlist ID, which you can find by joining that particular waitlist on the Chargepoint web interface and inspect the URL being fired up
+
+With the script and the necessary info ready, you can use _cron_ to run the script on a schedule. If you are a Mac user, you may choose _launchd_ instead.
+
+__Note__ If you are scheduling the script on your laptop, make sure your laptop is not sleeping or turned off at the scheduled times.
+
+# The Script
+
+```
+{% include chargepoint-join-waitlist.sh %}
+```
+
+# Future Improvement
+
+To be more user friendly, instead of asking for waitlist ID, use waitlist name from the UI instead. This requires another API to get the list of waitlists/regions.

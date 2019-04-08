@@ -1,0 +1,40 @@
+---
+title:  Keep Macbook Screen On at Work
+date:   2019-04-22 20:36:54 -0700
+---
+
+# Problem
+
+I have an external monitor attached to my Macbook at work. Frequently I would leave my desk, and for privacy I would lock my screen.
+
+Mac would activate sleep mode shortly.
+
+But I don't want it to settle into sleep mode! Because when I come back it would take me more than 10 seconds to wake up the system and the monitor!
+
+I would like to keep my screen on when I lock the screen and this behavior should __ONLY__ be applied when I am at work.
+
+# Solution
+
+I need a daemon running that checks if I am in the office, based on which keep screen on or let it sleep accordingly.
+
+For the daemon, I chose to go with _Screenwatcher_, a daemon that executes custom scripts when screen goes on and/or off. For my use case, only execute the script when screen goes on is sufficient.
+
+To check whether I am in the office, I check the wireless SSID the Macbook is currently connected to instead, because at work I always connect to a particular wireless SSID.
+
+To keep screen on, a Mac utility called _Caffeinate_ will do.
+
+Here are the steps:
+
+1. `brew install sleepwatcher`
+2. By default, Screenwatcher reads `$HOME/.wakeup` for screen on actions. Create that script.
+3. `brew services start sleepwatcher` to start the daemon.
+
+# My wakeup script
+
+```bash
+{% include sleepwatcher-wakeup.sh %}
+```
+
+# Future improvements
+
+The script provides the framework to add automatic tasks later that are _office-specific_. For example, along with keeping screen on in the office, I mute the system volume as well to avoid embarrassing myself when accidentally turning on music >.<

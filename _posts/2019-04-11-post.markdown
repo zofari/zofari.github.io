@@ -1,0 +1,20 @@
+---
+title:  How Shall We Write Unit Tests
+date:   2019-04-11 18:48:24 -0700
+---
+
+# Why do we need tests?
+Tests provide assurance empowering us to make bold code changes knowing that anything that breaks will (ideally) be captured by tests.
+
+# What is the issue with unit tests?
+UTs are often written in such a fashion that they are _closely tied to implementations_. The more they are, the more daunting it becomes to make code changes, because you would need to change all the affected UTs. This, for one, discourages programmers from refactoring their code, which should be an ongoing process to ensure code quality.
+
+# How to deal with the issue?
+Rather than writing UTs for every module, instead, we should write tests testing __requirements and behaviors__. These tests, perhaps, cannot be called "unit" tests any more, but they should provide most, if not all, of the assurance brought by UTs.
+
+# What is the reason or principle behind the above recommendation?
+For every action we take we should think whether the benefits it brings outweigh the cost. Implementations are often brittle. In terms, UTs that depend on implementations are brittle.
+
+__Does the perceived benefit justify the cost?__
+
+We should ask ourselves this question before we write any UT. In general, UTs against relatively stable public interfaces are good to have. Avoid if otherwise.
