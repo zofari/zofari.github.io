@@ -13,11 +13,11 @@ In my code reviews my defense for the design was rather weak. It should be expec
 
 This communication problem should be tackled with:
 
-    - Make effort to understand how each other's system works
-        - What the other system does
-        - Its general architecture
-        - What this feature is about, and how it fits in their system
-        - Their software components involved in the feature
-        - Make a list of possible interactions between their system and ours and what to be expected from their end to our end
-    - Head over to have face-to-face meetings, or even work together for a few days
-    - As soon as you struggle, identify the blocker and ask for manager/senior leads involvement
+- Make effort to understand how each other's system works
+    - What the other system does
+    - Its general architecture
+    - What this feature is about, and how it fits in their system
+    - Their software components involved in the feature
+    - Make a list of possible interactions between their system and ours and what to be expected from their end to our end
+- Head over to have face-to-face meetings, or even work together for a few days
+- As soon as you struggle, identify the blocker and ask for manager/senior leads involvement
