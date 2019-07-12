@@ -1,0 +1,23 @@
+---
+title:  What to learn from ACI integration
+date:   2019-07-11 17:01:37 -0700
+---
+
+The main issue I was facing this time was communication. It was utterly _ineffective_.
+
+For example, I pressed a few times if there was a way for the ACI folks to identify lists that are no longer needed hence I could attempt deletion from my end. They were under the false impression that no list should be removed, whether by them or by me, so my question confused them. As a result, I did not get a straight answer, and proceeded with a crippled design of keeping lists around until the partner gets deleted.
+
+Another example is that I told them data prefix lists should not be deleted. They assume data prefix mappings should not be deleted too, and went ahead with a design that only appends new mappings while keeping all old mappings around. Again, not pretty.
+
+In my code reviews my defense for the design was rather weak. It should be expected since it was a horrifying design to begin with.
+
+This communication problem should be tackled with:
+
+    - Make effort to understand how each other's system works
+        - What the other system does
+        - Its general architecture
+        - What this feature is about, and how it fits in their system
+        - Their software components involved in the feature
+        - Make a list of possible interactions between their system and ours and what to be expected from their end to our end
+    - Head over to have face-to-face meetings, or even work together for a few days
+    - As soon as you struggle, identify the blocker and ask for manager/senior leads involvement
